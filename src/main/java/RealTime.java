@@ -1,10 +1,8 @@
-import com.google.gson.annotations.SerializedName;
-
-public class stock {
+public class RealTime {
     private String symbol;
     private String price;
 
-    public stock(String symbol, String price){
+    public RealTime(String symbol, String price){
         this.symbol = symbol;
         this.price = price;
     }
