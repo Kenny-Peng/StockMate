@@ -11,7 +11,8 @@ public class StockMate {
 
         //attempt to retrieve url data
         try {
-            json = coreObject.getApiData("https://financialmodelingprep.com/api/v3/stock/real-time-price/VOO");
+            ApiWrapper wrapper = new ApiWrapper("stock", "real-time-price", "voo");
+            json = coreObject.getApiData(wrapper.getQuery());
         }
         catch (Exception e){
             System.out.println("bad api query url");
@@ -19,7 +20,7 @@ public class StockMate {
         }
         Gson gson = new Gson();
         RealTime data = gson.fromJson(json, RealTime.class);
-
+        data.displayData();
     }
 
     public StockMate(){
